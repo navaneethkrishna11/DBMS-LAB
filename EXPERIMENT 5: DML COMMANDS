@@ -1,0 +1,51 @@
+create table employee(
+Emp_id integer primary key,
+Emp_name varchar(43),
+Dept varchar(33),
+Salary integer
+);
+
+1) select *from employee where salary &gt; 7000;
+
+2) update employee
+set salary=8200
+where emp_name=&#39;David Smith&#39;;
+
+3)insert into employee values(108,&#39;Daniel Harris&#39;,&#39;Production&#39;,6700);
+
+insert into employee values(3,&#39;Charles Brown&#39;,&#39;marketing&#39;,3000);
+5)select emp_name from employee
+where emp_name not like &#39;D%&#39; and emp_name not like &#39;O%&#39;;
+
+4)delete from employee
+where emp_id=3;
+
+6)select dept,sum(salary)
+from employee
+group by dept;
+
+7)update employee
+set salary=salary+(salary*.5)
+
+where dept=&#39;production&#39;;
+
+8)delete from employee
+where salary&lt;7000;
+
+9)select emp_name,salary from employee where salary=(select min(salary)from employee);
+
+10)update employee
+set salary=8200
+where dept=&#39;marketing&#39;;
+select emp_name,dept,salary from employee where dept=&#39;marketing&#39;;
+
+11)select emp_name from employee where emp_name like &#39;a%&#39;;
+13)select upper(dept) from employee ;
+
+12)select emp_name from employee
+where emp_name like &#39;%it%&#39;;
+
+14)select *from employee
+where dept like &#39;m_r%&#39; and dept like &#39;%ket%&#39;;
+
+15)select reverse( upper(dept)) from employee ;
