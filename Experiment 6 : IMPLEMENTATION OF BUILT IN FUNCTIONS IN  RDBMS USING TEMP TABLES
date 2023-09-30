@@ -1,3 +1,5 @@
+part-A
+-----------------------------------------
 1) select CEIL(8.92) from dual;
 2) select CEIL(-3.9) from dual;
 3) select CEIL(17/3) from dual;
@@ -26,3 +28,36 @@
 26) select substr(&#39;India is my country&#39;,7,2)from dual;
 27) select substr(&#39;navaneeth&#39;,4,3)from dual;
 28) select substr(&#39;Substring&#39;,1,3)from dual;
+
+part-B
+---------------------------
+create table angle(
+ANGLE number primary key,
+SIN decimal(4,2),
+COS decimal(4,2),
+
+TAN decimal(4,2),
+SEC decimal(4,2),
+COT decimal(4,2));
+
+insert into ANGLE(angle)values(0);
+insert into ANGLE(angle)values(30);
+insert into ANGLE(angle)values(45);
+insert into ANGLE(angle)values(60);
+insert into ANGLE(angle)values(90);
+
+UPDATE angle
+SET SIN = ROUND(SIN(ANGLE * 3.14 / 180), 2),
+COS = ROUND(COS(ANGLE * 3.14 / 180), 2);
+
+UPDATE angle
+SET TAN = ROUND(TAN(ANGLE * 3.14 / 180), 2)
+where cos!=0;
+
+UPDATE angle
+SET COT= ROUND(1/TAN(ANGLE * 3.14 / 180), 2)
+where sin!=0;
+
+UPDATE angle
+set SEC= ROUND(1/COS(ANGLE * 3.14 / 180), 2)
+where cos!=0;
